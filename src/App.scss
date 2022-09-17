@@ -1,11 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: #b8e2f2;
   color: #33363a;
   font-family: 'Kumbh Sans', sans-serif;
-  box-sizing: border-box;
   font-size: 16px;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
 #root {
@@ -25,11 +34,12 @@ body {
 }
 
 .contact {
-  margin-top: 20px;
+  margin-top: 40px;
   text-align: center;
-
+  
   a {
     margin: 0 5px;
+    font-size: 20px;
     color: inherit;
   }
 }

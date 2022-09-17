@@ -45,18 +45,15 @@ function App() {
       <h1>Validação de documentos</h1>
 
       <div className="about">
-        <p>
-          Validação de documentos (B.I., Carta de condução e NUIT) usando
-          Regular Expression. <br />
-          <br />
-          1. Selecione o documento que pretende fazer a validação <br />
-          2. Insira o número de docuemento <br />
-          3. Clique em validar.
-        </p>
-        <p>
-          Encontre o código fonte{' '}
-          <a href="https://github.com/janiodrey/mz-doc-validation.git">aqui</a>
-        </p>
+        Validação de documentos (B.I., Carta de condução e NUIT) usando Regular
+        Expression. <br />
+        <br />
+        1. Selecione o documento que pretende fazer a validação <br />
+        2. Insira o número de docuemento <br />
+        3. Clique em validar. <br />
+        <br />
+        Encontre o código fonte{' '}
+        <a href="https://github.com/janiodrey/mz-doc-validation.git">aqui</a>
       </div>
 
       <form
