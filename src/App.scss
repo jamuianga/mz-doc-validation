@@ -1,35 +1,83 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body {
+  background-color: #b8e2f2;
+  color: #33363a;
+  font-family: 'Kumbh Sans', sans-serif;
+  box-sizing: border-box;
 }
 
-.form-group {
+#root {
+  margin: 0 auto;
+  width: 500px;
+}
+
+.form-input-group {
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  width: 250px;
+}
 
-  select {
-    // font-size: 18px;
-    margin-bottom: 5px;
-    padding: 10px 15px;
-    // font-weight: bold;
+.input-group {
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  .form-input {
+    width: 100%;
+    padding-right: 30px;
   }
 
-  input {
+  .material-icons {
+    position: absolute;
+    right: 10px;
     font-size: 16px;
-    padding: 10px 15px;
-    margin-bottom: 10px;
+    font-weight: bold;
+  }
+}
+
+label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.form-input,
+.form-btn {
+  padding: 10px 8px;
+  font-size: 16px;
+  border: 1px solid #89cff0;
+  background-color: #89cff0;
+  outline: none;
+}
+
+.form-btn {
+  background-color: #89cff0;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+// validação de formulário
+.form-validation {
+  .valid {
+    .form-input {
+      border: 1px solid #14c070;
+    }
+
+    .material-icons,
+    .form-input {
+      color: #198754;
+    }
   }
 
-  button {
-    padding: 10px 5px;
-    margin-bottom: 10px;
-  }
+  .invalid {
+    .form-input {
+      border: 1px solid #d32032;
+    }
 
-  small{
-    font-style: italic;
+    .material-icons,
+    .form-input {
+      color: #d32032;
+    }
   }
 }
