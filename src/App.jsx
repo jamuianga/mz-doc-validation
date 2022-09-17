@@ -42,7 +42,7 @@ function App() {
 
   return (
     <>
-      <h1>Validação de documentos</h1>
+      <h1>Validação de documento</h1>
 
       <div className="about">
         Validação de documentos (B.I., Carta de condução e NUIT) usando Regular
