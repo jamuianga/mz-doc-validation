@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.scss';
 
 function App() {
-  const [documento, setDocumento] = useState(1);
+  const [documento, setDocumento] = useState("1");
   const [numeroDocumento, setNumeroDocumento] = useState('');
   const [showValidacao, setShowValidacao] = useState(false);
   const [isDocumentoValido, setIsDocumentoValido] = useState(false);
@@ -45,8 +45,8 @@ function App() {
       <h1>Validação de documento</h1>
 
       <div className="about">
-        Validação de documentos (B.I., Carta de condução e NUIT) usando Regular
-        Expression. <br />
+        Validação de documentos (B.I., Carta de condução e NUIT) usando{' '}
+        <b>Regular Expression</b>. <br />
         <br />
         1. Selecione o documento que pretende fazer a validação <br />
         2. Insira o número de docuemento <br />
