@@ -11,11 +11,11 @@ function App() {
     let regex = null;
 
     switch (documento) {
-      case 1:
+      case '1':
         regex = /^[0-9]{12}[A-Z]{1}$/;
         break;
-      case 2:
-        regex = /[0-9]{8}\/[0-9]{1}/;
+      case '2':
+        regex = /^[0-9]{8}\/[0-9]{1}$/;
         break;
       case '4':
         regex = /^[0-9]{9}$/;
@@ -43,6 +43,22 @@ function App() {
   return (
     <>
       <h1>Validação de documentos</h1>
+
+      <div className="about">
+        <p>
+          Validação de documentos (B.I., Carta de condução e NUIT) usando
+          Regular Expression. <br />
+          <br />
+          1. Selecione o documento que pretende fazer a validação <br />
+          2. Insira o número de docuemento <br />
+          3. Clique em validar.
+        </p>
+        <p>
+          Encontre o código fonte{' '}
+          <a href="https://github.com/janiodrey/mz-doc-validation.git">aqui</a>
+        </p>
+      </div>
+
       <form
         onSubmit={(e) => e.preventDefault()}
         className={`${showValidacao ? 'form-validation' : ''}`}
@@ -58,7 +74,7 @@ function App() {
           >
             <option value={1}>Bilhete de identidade</option>
             <option value={2}>Carta de condução</option>
-            <option value={3}>Passaporte</option>
+            {/* <option value={3}>Passaporte</option> */}
             <option value={4}>NUIT</option>
           </select>
         </div>
@@ -85,12 +101,22 @@ function App() {
         </div>
 
         <button className="form-btn" type="button" onClick={validarDocumento}>
-          Validar
+          <span className="material-icons">check</span> Validar
         </button>
+
         <button className="form-btn" type="button" onClick={resetForm}>
-          Repor
+          <span className="material-icons">refresh</span> Limpar
         </button>
       </form>
+
+      <div className="contact">
+        <a href="https://github.com/janiodrey" target="_blank">
+          <i className="bi bi-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/jânio-muianga" target="_blank">
+          <i className="bi bi-linkedin"></i>
+        </a>
+      </div>
     </>
   );
 }

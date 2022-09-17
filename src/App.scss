@@ -5,11 +5,33 @@ body {
   color: #33363a;
   font-family: 'Kumbh Sans', sans-serif;
   box-sizing: border-box;
+  font-size: 16px;
 }
 
 #root {
   margin: 0 auto;
   width: 500px;
+}
+
+.about {
+  background-color: #89cff0;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 20px 0;
+
+  ol {
+    padding-inline-start: 1em;
+  }
+}
+
+.contact {
+  margin-top: 20px;
+  text-align: center;
+
+  a {
+    margin: 0 5px;
+    color: inherit;
+  }
 }
 
 .form-input-group {
@@ -55,6 +77,14 @@ label {
   background-color: #89cff0;
   cursor: pointer;
   margin-right: 10px;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+
+  .material-icons {
+    font-size: 18px;
+    margin-right: 8px;
+  }
 }
 
 // validação de formulário
