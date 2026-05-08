@@ -1,14 +1,12 @@
 import { Check, RotateCcw } from "lucide-react";
 import { useState } from "react";
-// import "./App.scss";
 
 function App() {
   const [documento, setDocumento] = useState("1");
   const [numeroDocumento, setNumeroDocumento] = useState("");
-  const [showValidacao, setShowValidacao] = useState(false);
-  const [isDocumentoValido, setIsDocumentoValido] = useState(false);
 
-  const validarDocumento = () => {
+  const validarDocumento = (e) => {
+    e.preventDefault();
     let regex = null;
 
     switch (documento) {
@@ -27,18 +25,10 @@ function App() {
     }
 
     if (numeroDocumento.match(regex) != null) {
-      setIsDocumentoValido(true);
+      alert("Documento válido!");
     } else {
-      setIsDocumentoValido(false);
+      alert("Documento inválido!");
     }
-
-    setShowValidacao(true);
-  };
-
-  const resetForm = () => {
-    setDocumento(1);
-    setNumeroDocumento("");
-    setShowValidacao(false);
   };
 
   return (
@@ -63,24 +53,20 @@ function App() {
             <a
               href="https://github.com/jamuianga/mz-doc-validation.git"
               className="hover:underline text-blue-500"
+              target="_blank"
             >
               aqui
             </a>
           </p>
         </div>
 
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className={`${showValidacao ? "form-validation" : ""} mb-8`}
-        >
+        <form className="mb-8">
           <div className="mb-4">
             <label className="block font-medium mb-1">Documento</label>
             <select
               className="rounded bg-blue-300 p-2 w-full shadow-xs outline-0"
               value={documento}
-              onChange={(e) => {
-                setDocumento(e.target.value);
-              }}
+              onChange={(e) => setDocumento(e.target.value)}
             >
               <option value={1}>Bilhete de identidade</option>
               <option value={2}>Carta de condução</option>
@@ -89,29 +75,22 @@ function App() {
             </select>
           </div>
 
-          <div className={`mb-4 ${isDocumentoValido ? "valid" : "invalid"}`}>
+          <div className="mb-4">
             <label className="block font-medium mb-1">
               Número do documento
             </label>
-            <div className="">
-              <input
-                className="rounded bg-blue-300 p-2 w-full shadow-xs outline-0"
-                type="text"
-                value={numeroDocumento}
-                onChange={(e) => setNumeroDocumento(e.target.value)}
-              />
-              {showValidacao && (
-                <span className={"material-icons"}>
-                  {isDocumentoValido ? "done" : "close"}
-                </span>
-              )}
-            </div>
+            <input
+              className="rounded bg-blue-300 p-2 w-full shadow-xs outline-0"
+              type="text"
+              value={numeroDocumento}
+              onChange={(e) => setNumeroDocumento(e.target.value)}
+            />
           </div>
 
           <div className="flex items-center gap-2">
             <button
               className="flex items-center justify-center bg-blue-300 shadow-xs rounded py-2 px-4 gap-2 cursor-pointer font-medium"
-              type="button"
+              type="submit"
               onClick={validarDocumento}
             >
               <Check size={20} /> Validar
@@ -120,7 +99,7 @@ function App() {
             <button
               className="flex items-center justify-center bg-blue-300 shadow-xs rounded py-2 px-4 gap-2 cursor-pointer font-medium"
               type="button"
-              onClick={resetForm}
+              onClick={() => setNumeroDocumento("")}
             >
               <RotateCcw size={20} /> Limpar
             </button>
